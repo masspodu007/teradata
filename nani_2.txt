@@ -1,0 +1,44 @@
+Write and SQL to show “WARE” as output. [2]
+
+
+1. CREATE TABLE VRAMINI_EXAM(NAME VARCHAR(20));
+   INSERT INTO VRAMINI_EXAM VALUES('WARE HOUSE');
+   SELECT SUBSTR(NAME,1,4) FROM VRAMINI_EXAM
+
+2.SELECT DATE+INTERVAL '2' YEAR+INTERVAL '01' MONTH
+
+3.CREATE MACRO VRAMINI_LOCATION(EMPLOYEE_LOCATION VARCHAR(20))
+  AS
+  (SELECT EMPLOYEE_NAME FROM EMPLOYEE;);
+
+4.SELECT EMP_LOC FROM VRAMINI_DUMMY GROUP BY EMP_LOC
+
+5.SELECT NAME,PHONE_NO,DATE
+  FROM USER,USERHISTORY
+  WHERE USER.USER_ID=USERHISTORY.USER_ID
+        AND ACTION='LOGGED_ON' 
+	AND DATE=(SELECT MAX(DATE) FROM USERHISTORY WHERE DATE-MAX(DATE)<30);
+
+6.
+a) Find the names of all salespeople that have an order with Samsonic.[5]
+
+select Salesperson.Name from Salesperson 
+where Salesperson.id in (select orders.Salesperson_id from orders, customer 
+	where orders.cust_id = customer.id and customer.Name = 'Samsonic');
+
+
+b)Find the names of all people that do not have any order with samsonic. [5]
+
+
+select Salesperson.Name 
+from Salesperson 
+where Salesperson.ID NOT IN 
+(
+	select Orders.Salesperson_id from Customer, Orders 
+	where Orders.cust_id = Customer.ID and Customer.Name = 'Samsonic'
+);
+
+C)
+d)
+
+7.WE WILL NOT GET THIS QUESTION FOR EXAM

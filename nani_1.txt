@@ -1,0 +1,40 @@
+1.	Write the querie’s for the following questions.[5]
+1)	Add 2 years to the Current Date.
+2)	Retrive Month from the current date
+
+
+
+1.SELECT DATE+ INTERVAL 'n' YEAR  --adding the n years to the current date
+
+
+1.1.SELECT EXTRACT(MONTH FROM DATE)  --TO EXTRACT THE MONTH FROM THE DATE
+
+2.select	student_id, 
+case	
+	when grade_pt<3 then 'Average'
+	when grade_pt>=3 and grade_pt<=4 then 'Good'
+	else 'Best'
+end as Grade_name
+from vramini_students   --CASE STATEMENT
+
+
+3.create	macro vramini123(empno integer) as (
+select empname,deptname 
+from vramini_e1,vramini_dept1 
+where	vramini_e1.deptn0=vramini_dept1.deptno 
+and vramini_e1.empno= :empno;
+);  --CREATE MACRO(PARAMETERIZED)
+
+
+4.WE DIDNT GET
+
+
+
+
+
+
+5.SCRIPT TO LOAD DATA
+1)vramini_1.txt
+2)vramini_1.txt
+3)
+4)
